@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="MidService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:51707/MidService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:51707/MidService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:51707/MidService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MidtermWcfService.DataContracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMidService_showUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:showUsers" />
+  </wsdl:message>
+  <wsdl:message name="IMidService_showUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:showUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMidService_updateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateUser" />
+  </wsdl:message>
+  <wsdl:message name="IMidService_updateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMidService_insertUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertUser" />
+  </wsdl:message>
+  <wsdl:message name="IMidService_insertUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMidService_deleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteUser" />
+  </wsdl:message>
+  <wsdl:message name="IMidService_deleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMidService_showOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:showOrders" />
+  </wsdl:message>
+  <wsdl:message name="IMidService_showOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:showOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMidService_updateOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateOrder" />
+  </wsdl:message>
+  <wsdl:message name="IMidService_updateOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMidService_deleteOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteOrder" />
+  </wsdl:message>
+  <wsdl:message name="IMidService_deleteOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMidService_insertOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertOrder" />
+  </wsdl:message>
+  <wsdl:message name="IMidService_insertOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMidService_updateUsersOrdersQty_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateUsersOrdersQty" />
+  </wsdl:message>
+  <wsdl:message name="IMidService_updateUsersOrdersQty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateUsersOrdersQtyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMidService_getUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUser" />
+  </wsdl:message>
+  <wsdl:message name="IMidService_getUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMidService_getOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:getOrder" />
+  </wsdl:message>
+  <wsdl:message name="IMidService_getOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getOrderResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IMidService">
+    <wsdl:operation name="showUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMidService/showUsers" message="tns:IMidService_showUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMidService/showUsersResponse" message="tns:IMidService_showUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMidService/updateUser" message="tns:IMidService_updateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMidService/updateUserResponse" message="tns:IMidService_updateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMidService/insertUser" message="tns:IMidService_insertUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMidService/insertUserResponse" message="tns:IMidService_insertUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMidService/deleteUser" message="tns:IMidService_deleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMidService/deleteUserResponse" message="tns:IMidService_deleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="showOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMidService/showOrders" message="tns:IMidService_showOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMidService/showOrdersResponse" message="tns:IMidService_showOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMidService/updateOrder" message="tns:IMidService_updateOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMidService/updateOrderResponse" message="tns:IMidService_updateOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMidService/deleteOrder" message="tns:IMidService_deleteOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMidService/deleteOrderResponse" message="tns:IMidService_deleteOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMidService/insertOrder" message="tns:IMidService_insertOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMidService/insertOrderResponse" message="tns:IMidService_insertOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateUsersOrdersQty">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMidService/updateUsersOrdersQty" message="tns:IMidService_updateUsersOrdersQty_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMidService/updateUsersOrdersQtyResponse" message="tns:IMidService_updateUsersOrdersQty_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMidService/getUser" message="tns:IMidService_getUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMidService/getUserResponse" message="tns:IMidService_getUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMidService/getOrder" message="tns:IMidService_getOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMidService/getOrderResponse" message="tns:IMidService_getOrder_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IMidService" type="tns:IMidService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="showUsers">
+      <soap:operation soapAction="http://tempuri.org/IMidService/showUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateUser">
+      <soap:operation soapAction="http://tempuri.org/IMidService/updateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertUser">
+      <soap:operation soapAction="http://tempuri.org/IMidService/insertUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteUser">
+      <soap:operation soapAction="http://tempuri.org/IMidService/deleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="showOrders">
+      <soap:operation soapAction="http://tempuri.org/IMidService/showOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateOrder">
+      <soap:operation soapAction="http://tempuri.org/IMidService/updateOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteOrder">
+      <soap:operation soapAction="http://tempuri.org/IMidService/deleteOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertOrder">
+      <soap:operation soapAction="http://tempuri.org/IMidService/insertOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateUsersOrdersQty">
+      <soap:operation soapAction="http://tempuri.org/IMidService/updateUsersOrdersQty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUser">
+      <soap:operation soapAction="http://tempuri.org/IMidService/getUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrder">
+      <soap:operation soapAction="http://tempuri.org/IMidService/getOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MidService">
+    <wsdl:port name="BasicHttpBinding_IMidService" binding="tns:BasicHttpBinding_IMidService">
+      <soap:address location="http://localhost:51707/MidService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
